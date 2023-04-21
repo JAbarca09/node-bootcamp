@@ -2,6 +2,7 @@ const fs = require("fs");
 const http = require("http");
 const path = require("path");
 const url = require("url");
+const querystring = require("querystring");
 
 //////////////////////////////////
 // FILES
@@ -54,7 +55,13 @@ const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, "utf-8");
 const dataObj = JSON.parse(data);
 
 const server = http.createServer((req, res) => {
-  const { query, pathname } = url.parse(req.url, true);
+  // const { query, pathname } = url.parse(req.url, true);
+  console.log(req.headers.host);
+  const baseURL = `http://${req.headers.host}`;
+  const requestURL = new URL(req.url, baseURL);
+  const pathname = requestURL.pathname;
+  const query = requestURL.searchParams.get("id");
+  console.log(query);
 
   //Overview page
   if (pathname === "/" || pathname === "/overview") {
@@ -69,7 +76,7 @@ const server = http.createServer((req, res) => {
     //Product page
   } else if (pathname === "/product") {
     res.writeHead(200, { "Content-type": "text/html" });
-    const product = dataObj[query.id];
+    const product = dataObj[query];
     const output = replaceTemplate(tempProduct, product);
 
     res.end(output);
