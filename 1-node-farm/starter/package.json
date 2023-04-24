@@ -8,10 +8,10 @@
   },
   "author": "Jesse Abarca",
   "license": "ISC",
-  "dependencies": {
-    "slugify": "^1.6.6"
-  },
   "devDependencies": {
     "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "slugify": "~1.6.6"
   }
 }
