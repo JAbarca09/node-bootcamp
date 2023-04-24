@@ -2,6 +2,7 @@ const fs = require("fs");
 const http = require("http");
 const path = require("path");
 const url = require("url");
+const slugify = require("slugify")
 const querystring = require("querystring");
 const replaceTemplate = require("./modules/replaceTemplate");
 
