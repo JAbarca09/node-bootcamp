@@ -39,6 +39,19 @@ const getDogPic = async () => {
   return '2: READY🐶';
 };
 
+// Immediately Invoked Function Expression
+(async () => {
+  try {
+    console.log('1: Will get dog pics!');
+    const result = await getDogPic();
+    console.log(result);
+    console.log('3: Done getting dog pics!');
+  } catch (err) {
+    console.log('ERROR 💥');
+  }
+})();
+
+/*
 console.log('1: Will get dog pics!');
 getDogPic()
   .then((x) => {
@@ -48,7 +61,7 @@ getDogPic()
   .catch((err) => {
     console.log('ERROR 💥');
   });
-
+*/
 /*
 readFilePro(`${__dirname}/dog.txt`)
   .then((data) => {
