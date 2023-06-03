@@ -16,7 +16,6 @@ exports.checkID = (req, res, next, val) => {
 };
 
 exports.checkBody = (req, res, next) => {
-  console.log('Check tour body:', req.body);
   if (!req.body.name || !req.body.price) {
     return res.status(400).json({
       status: 'fail',
