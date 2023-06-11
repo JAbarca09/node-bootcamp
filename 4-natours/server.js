@@ -32,6 +32,7 @@ const tourSchema = new mongoose.Schema({
     required: [true, 'A tour must have a price'],
   },
 });
+const Tour = mongoose.model('Tour', tourSchema);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
