@@ -1,9 +1,12 @@
-const Tour = require('./../models/tourModel');
+const Tour = require('../models/tourModel');
+// './../models/TourModel'
 
 exports.getAllTours = async (req, res) => {
   try {
     // BUILD QUERY
     // 1A) Filtering
+
+    // eslint-disable-next-line node/no-unsupported-features/es-syntax
     const queryObj = { ...req.query };
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach((el) => delete queryObj[el]);
