@@ -34,7 +34,7 @@ exports.getAllTours = async (req, res) => {
       query = query.select(fields);
       // query.select('name price ratings')
     } else {
-      query = query.selct('-__v');
+      query = query.select('-__v');
     }
 
     // EXECUTE QUERY
@@ -51,7 +51,7 @@ exports.getAllTours = async (req, res) => {
   } catch (err) {
     res.status(404).json({
       status: 'fail',
-      message: err,
+      message: err.message,
     });
   }
 };
