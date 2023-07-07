@@ -4,7 +4,7 @@
   "description": "Learning node, express and mongoDB",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon server.js",
+    "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "author": "Jesse Abarca",
@@ -13,7 +13,8 @@
     "dotenv": "^16.1.3",
     "express": "^4.18.2",
     "mongoose": "^5.13.17",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
     "eslint": "^8.42.0",
